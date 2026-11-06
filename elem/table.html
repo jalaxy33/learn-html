@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table元素示例</title>
+  </head>
+
+  <body>
+    <table>
+      <!-- 1. caption：表格标题，说明这是什么表 -->
+      <caption>
+        北京至上海高铁时刻表（部分）
+      </caption>
+
+      <!-- 2. colgroup + col：给列分组，方便整列设置样式 -->
+      <colgroup>
+        <!-- 车次列 -->
+        <col class="train-no-col" />
+        <!-- 出发站列 -->
+        <col class="station-col" />
+        <!-- 到达站列 -->
+        <col class="station-col" />
+        <!-- 出发时间列 -->
+        <col class="time-col" />
+        <!-- 到达时间列 -->
+        <col class="time-col" />
+        <!-- 历时列 -->
+        <col class="duration-col" />
+      </colgroup>
+
+      <!-- 3. thead：表头区域 -->
+      <thead>
+        <tr>
+          <!-- scope="col"：这些 th 管理各自列的数据 -->
+          <th scope="col">车次</th>
+          <th scope="col">出发站</th>
+          <th scope="col">到达站</th>
+          <th scope="col">出发时间</th>
+          <th scope="col">到达时间</th>
+          <th scope="col">历时</th>
+        </tr>
+      </thead>
+
+      <!-- 4. tbody：数据主体区域 -->
+      <tbody>
+        <tr>
+          <!-- scope="row"：这个 th 管理本行的数据 -->
+          <th scope="row">G1</th>
+          <td>北京南</td>
+          <td>上海虹桥</td>
+          <td>08:00</td>
+          <td>13:00</td>
+          <td>5小时00分</td>
+        </tr>
+        <tr>
+          <th scope="row">G3</th>
+          <td>北京南</td>
+          <td>上海虹桥</td>
+          <td>09:00</td>
+          <td>14:28</td>
+          <td>5小时28分</td>
+        </tr>
+        <tr>
+          <th scope="row">G5</th>
+          <!-- colspan="2"：出发站和到达站合并，表示这趟车暂停运营 -->
+          <td colspan="2">线路维护，暂停运营</td>
+          <td>10:00</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <th scope="row">G7</th>
+          <td>北京南</td>
+          <td>上海虹桥</td>
+          <td>11:00</td>
+          <td>16:18</td>
+          <td>5小时18分</td>
+        </tr>
+      </tbody>
+
+      <!-- 5. tfoot：汇总区域 -->
+      <tfoot>
+        <tr>
+          <!-- colspan="6"：横跨所有6列，显示备注信息 -->
+          <td colspan="6">备注：以上时刻表仅供参考，请以实际购票信息为准。</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>
