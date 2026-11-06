@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tabindex 属性示例</title>
+  <style>
+    /* 给获得焦点的元素加一个明显的边框，方便观察 */
+    :focus {
+      outline: 3px solid blue;
+    }
+
+    div {
+      padding: 8px;
+      margin: 5px;
+      background: #eee;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>按 Tab 键，观察焦点跳转顺序：</p>
+
+  <!-- tabindex="0"：加入正常的 Tab 顺序，按文档顺序排列 -->
+  <!-- div 默认不能被 Tab 聚焦，加上 tabindex="0" 就可以了 -->
+  <div tabindex="0">我是第一个（tabindex=0）</div>
+
+  <!-- 普通输入框默认就在 Tab 顺序里 -->
+  <input type="text" placeholder="输入框（默认聚焦）">
+
+  <!-- tabindex="-1"：不在 Tab 顺序里，但可以用 JavaScript 强制聚焦 -->
+  <div tabindex="-1" id="modal-box">
+    我不在 Tab 顺序里，但 JS 可以让我获得焦点
+  </div>
+
+  <button onclick="focusModal()">用 JS 聚焦上面的 div</button>
+
+  <script>
+    function focusModal() {
+      // tabindex="-1" 的元素可以通过 JS 的 focus() 方法聚焦
+      document.getElementById("modal-box").focus()
+    }
+  </script>
+
+</body>
+
+</html>

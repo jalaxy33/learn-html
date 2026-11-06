@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>draggable 属性示例</title>
+  <style>
+    .drag-item {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #4a90d9;
+      color: white;
+      border-radius: 5px;
+      margin: 5px;
+      /* 鼠标变成抓手形状 */
+      cursor: grab;
+    }
+
+    .drop-zone {
+      width: 300px;
+      height: 100px;
+      border: 2px dashed #999;
+      padding: 10px;
+      margin-top: 20px;
+      text-align: center;
+      line-height: 80px;
+      color: #999;
+    }
+
+    .drop-zone:active {
+      border-color: #4a90d9;
+      background: #e8f0fe;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>拖拽示例</h2>
+
+  <!-- draggable="true"：开启拖拽 -->
+  <div class="drag-item" draggable="true" ondragstart="handleDragStart(event)">
+    拖动我
+  </div>
+
+  <!-- draggable="false"：禁止拖拽（图片默认可拖拽，加这个禁止） -->
+  <img src="photo.jpg" alt="照片" draggable="false">
+
+
+  <!--放置区域-->
+  <div class="drop-zone" id="drop-zone" ondragover="handleDragOver(event)" ondragenter="handleDragEnter(event)"
+    ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)">
+    把东西拖到这里
+  </div>
+
+
+  <script>
+    function handleDragStart(event) {
+      // 记录被拖动的内容
+      event.dataTransfer.setData("text/plain", event.target.innerText);
+    }
+
+    function handleDragOver(event) {
+      // 必须阻止默认行为，才能触发 drop 事件
+      event.preventDefault();
+    }
+
+    function handleDragEnter(event) {
+      // 拖动进入放置区时，加高亮样式
+      document.getElementById("drop-zone").classList.add("active")
+    }
+
+    function handleDragLeave(event) {
+      // 拖动离开放置区时，移除高亮样式
+      document.getElementById("drop-zone").classList.remove("active")
+    }
+
+    function handleDrop(event) {
+      event.preventDefault()
+      // 获取拖过来的内容并显示
+      var data = event.dataTransfer.getData("text/plain");
+      document.getElementById("drop-zone").innerText = "放下了：" + data;
+      document.getElementById("drop-zone").classList.remove("active")
+    }
+
+  </script>
+
+</body>
+
+</html>

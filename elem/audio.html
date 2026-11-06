@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>audio元素示例</title>
+  </head>
+
+  <body>
+    <!-- 最简单的写法：直接在 audio 标签上写 src -->
+    <!-- 有 controls：显示播放控件，用户可以操作 -->
+    <audio src="audio/bgm.mp3" controls>
+      <!-- 这里的文字是备用内容，只在浏览器不支持 audio 标签时显示 -->
+      您的浏览器不支持音频播放，请<a href="audio/bgm.mp3">点击下载音频文件</a>
+    </audio>
+
+    <!-- 推荐写法：提供多种格式，浏览器自动选择能播放的 -->
+    <audio controls>
+      <!-- 浏览器从上往下依次尝试，找到能播放的就用 -->
+      <!-- type 属性告诉浏览器文件格式，避免下载后才发现不支持 -->
+      <source src="audio/song.mp3" type="audio/mpeg" />
+      <source src="audio/song.ogg" type="audio/ogg" />
+      <source src="audio/song.wav" type="audio/wav" />
+      <!-- 所有格式都不支持时，显示这段文字 -->
+      您的浏览器不支持 HTML5 音频，请<a href="audio/song.mp3">下载 MP3 文件</a>收听。
+    </audio>
+
+    <!-- 没有 controls：不显示控件，页面上看不到播放器 -->
+    <!-- 通常配合 JavaScript 来控制播放，或者用于背景音乐 -->
+    <audio src="audio/bgm.mp3" id="bgm">您的浏览器不支持音频播放。</audio>
+
+    <!-- autoplay：页面加载后自动播放 -->
+    <!-- 如果要自动播放，必须同时加上 muted（静音），才能成功自动播放。 -->
+    <audio src="audio/bgm.mp3" autoplay muted>您的浏览器不支持音频播放</audio>
+
+    <!-- loop：播放完后自动从头再播，循环播放 -->
+    <audio src="audio/bgm.mp3" controls loop>您的浏览器不支持音频播放</audio>
+
+    <!-- preload="none"：不预加载，用户点击播放时才开始下载 -->
+    <!-- 适合：节省流量，用户不一定会播放的场景 -->
+    <audio src="audio/podcast.mp3" controls preload="none">您的浏览器不支持音频播放。</audio>
+
+    <!-- preload="metadata"：只预加载元数据（时长、格式等），不下载音频内容 -->
+    <!-- 适合：需要显示时长，但不确定用户是否会播放。大多数浏览器的默认行为 -->
+    <audio src="audio/song.mp3" controls preload="metadata">您的浏览器不支持音频播放。</audio>
+
+    <!-- preload="auto"：让浏览器自行决定是否预加载整个文件 -->
+    <!-- 适合：用户很可能会播放的重要音频 -->
+    <audio src="audio/intro.mp3" controls preload="auto">您的浏览器不支持音频播放。</audio>
+
+    <h2>今日推荐音乐</h2>
+    <!-- 完整写法：多格式兼容 + 显示控件 + 预加载元数据 -->
+    <figure>
+      <figcaption>青花瓷 - 周杰伦</figcaption>
+      <audio controls preload="metadata">
+        <source src="audio/blue-and-white-porcelain.mp3" type="audio/mpeg" />
+        <source src="audio/blue-and-white-porcelain.ogg" type="audio/ogg" />
+        您的浏览器不支持 HTML5 音频播放，
+        <a href="audio/blue-and-white-porcelain.mp3">点击下载 MP3</a>。
+      </audio>
+    </figure>
+
+    <h2>背景音乐（静音自动循环）</h2>
+    <audio autoplay loop muted id="background-music">
+      <source src="audio/ambient-bg.mp3" type="audio/mpeg" />
+      <source src="audio/ambient-bg.ogg" type="audio/ogg" />
+    </audio>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>figure容器示例</title>
+  </head>
+  <body>
+    <!-- 最简单的用法：图片 + 说明文字 -->
+    <figure>
+      <img
+        src="images/forbidden-city.jpg"
+        alt="故宫太和殿正面全景"
+        width="700"
+        height="467"
+        loading="lazy"
+      />
+      <figcaption>故宫太和殿，建于明永乐年间，是中国现存规模最大的木结构建筑</figcaption>
+    </figure>
+
+    <!-- figure 不只能放图片，还能放代码块 -->
+    <figure>
+      <!-- figcaption 放在前面，作为代码的标题 -->
+      <figcaption>示例：用 Python 打印九九乘法表</figcaption>
+      <!-- pre 保留代码的缩进和换行，code 表示这是代码内容 -->
+      <pre><code>
+for i in range(1,10):
+  for j in range(1, i+1):
+    print(f"{j}x{i}={i*j}", end="\t")
+  print()
+      </code></pre>
+    </figure>
+
+    <!-- figure 还可以包裹引用内容 -->
+    <figure>
+      <blockquote>
+        <p>学而不思则罔，思而不学则殆</p>
+      </blockquote>
+      <figcaption>——《论语·为政》</figcaption>
+    </figure>
+  </body>
+</html>

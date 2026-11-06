@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>链接示例</title>
+</head>
+
+<body>
+  <!-- target="_self"：在当前窗口打开（默认行为，不写 target 就是这个效果） -->
+  <a href="about.html" target="_self">关于我们</a>
+
+  <!-- target="_blank"：在新标签页打开 -->
+  <!-- 常用于链接到外部网站，不打断用户当前的浏览 -->
+  <!--为了防止被脚本篡改跳转到钓鱼网站，同时加上 rel="noopener noreferrer"-->
+  <a href="https://www.jd.com" target="_blank" rel="noopener noreferrer">去京东购物</a>
+
+  <!-- target="_parent"：在父框架中打开（用于 iframe 嵌套场景） -->
+  <a href="home.html" target="_parent">返回父页面</a>
+
+  <!-- target="_top"：在整个浏览器窗口中打开，跳出所有框架 -->
+  <a href="home.html" target="_top">跳出框架</a>
+
+</body>
+
+</html>

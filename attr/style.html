@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>style属性示例</title>
+</head>
+
+<body>
+  <!-- 直接在元素上写样式 -->
+  <p style="color: blue; font-size: 18px; font-weight: bold;">
+    这段文字是蓝色的、18px、加粗的
+  </p>
+
+  <!-- 多个样式用分号隔开 -->
+  <div style="background-color: #ffeecc; padding: 20px; border: 1px solid orange;">
+    这是一个有背景色、内边距和边框的盒子
+  </div>
+
+  <!-- 行内样式常用于动态修改，比如通过 JavaScript 改变颜色 -->
+  <p id="tip" style="color: green;">操作成功！</p>
+
+  <script>
+    document.getElementById("tip").style.color = "red";
+  </script>
+
+  <!--大量重复样式推荐用 class 统一管理-->
+  <style>
+    .body-text {
+      color: blue;
+      font-size: 16px;
+    }
+  </style>
+  <p class="body-text">段落一</p>
+  <p class="body-text">段落二</p>
+  <p class="body-text">段落三</p>
+
+</body>
+
+</html>

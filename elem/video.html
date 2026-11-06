@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>video元素示例</title>
+    <style>
+      /* 让视频宽度自适应容器，保持比例 */
+      .video-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .video-container video {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>视频播放示例</h1>
+
+    <!-- 完整的视频播放器 -->
+    <div class="video-container">
+      <figure>
+        <video
+          controls
+          width="800"
+          height="450"
+          poster="images/lession1-cover.jpg"
+          preload="metadata"
+        >
+          <!-- 优先提供 MP4，兼容性最广 -->
+          <source src="videos/lesson1.mp4" type="video/mp4" />
+          <!-- 备选 WebM，文件更小 -->
+          <source src="videos/lesson1.webm" type="video/webm" />
+
+          <!-- 中文字幕，默认开启 -->
+          <track
+            kind="subtitles"
+            src="subtitles/lession1-zh.vtt"
+            srclang="zh"
+            label="中文字幕"
+            default
+          />
+          <!-- 无障碍描述 -->
+          <track
+            kind="descriptions"
+            src="subtitles/lession1-desc.vtt"
+            srclang="zh"
+            label="视频描述"
+          />
+
+          <!-- 浏览器不支持时的备用内容 -->
+          您的浏览器不支持 HTML5 视频播放，请
+          <a href="videos/lesson1.mp4">下载 MP4 视频</a>观看。
+        </video>
+        <figcaption>第一课：HTML 基础入门（时长：45分钟）</figcaption>
+      </figure>
+    </div>
+
+    <h2>网站首页背景视频（静音自动循环）</h2>
+    <!-- 首页背景视频：静音 + 自动播放 + 循环 + 不显示控件 -->
+    <video
+      autoplay
+      muted
+      loop
+      width="1920"
+      height="1080"
+      poster="images/hero-bg.jpg"
+      style="width: 100%; height: auto"
+    >
+      <source src="videos/hero-bg.mp4" type="video/mp4" />
+      <source src="videos/hero-bg.webm" type="video/webm" />
+      <!-- 不支持视频时显示封面图（通过 CSS 背景图实现） -->
+    </video>
+  </body>
+</html>

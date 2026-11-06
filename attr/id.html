@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>id 属性示例</title>
+  <style>
+    /* 用 # 号加 id 名来选中这个元素 */
+    #main-title {
+      color: red;
+      font-size: 32px;
+    }
+
+    #welcome-msg {
+      background-color: #f0f0f0;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="main-title">欢迎来到我的网站</h1>
+
+  <p id="welcome-msg">点击按钮改变这段文字的颜色</p>
+  <button onclick="changeColor()">点我变色</button>
+
+  <a href="#section-about">跳转到关于我们</a>
+  <div id="section-about">
+    <h2>关于我们</h2>
+    <p>这里是关于我们的内容。</p>
+  </div>
+
+  <script>
+    function changeColor() {
+      document.getElementById("welcome-msg").style.color = "blue";
+    }
+  </script>
+
+</body>
+
+</html>

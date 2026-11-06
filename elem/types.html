@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>如何学好 HTML —— 张三的博客</title>
+</head>
+
+<body>
+
+  <header>
+    <h1>张三的技术博客</h1>
+    <nav>
+      <ul>
+        <li><a href="/">首页</a></li>
+        <li><a href="/html">HTML 教程</a></li>
+        <li><a href="/css">CSS 教程</a></li>
+        <li><a href="/about">关于我</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+    <article>
+      <h1>如何学好 <abbr title="超文本标记语言">HTML</abbr></h1>
+
+      <div class="article-meta">
+        <span>作者：张三</span>
+        <time datetime="2026-11">2026年11月</time>
+      </div>
+
+      <p>
+        学习 <strong>HTML</strong> 是前端开发的第一步。
+        很多人觉得 HTML 很简单，但要真正掌握
+        <em>语义化</em>的写法，还需要一定的练习。
+      </p>
+
+
+      <h2>为什么要学 HTML</h2>
+
+      <p>
+        <dfn>HTML</dfn> 是 HyperText Markup Language 的缩写，
+        是构建网页结构的标准语言。没有 HTML，网页就无法存在。
+      </p>
+
+      <blockquote cite="https://example.com">
+        <p>HTML 不只是标签，它是你与用户沟通的第一道桥梁。</p>
+      </blockquote>
+
+      <hr>
+
+      <h2>学习路径</h2>
+
+      <ol>
+        <li>
+          掌握基础结构
+          <ul>
+            <li>DOCTYPE 声明</li>
+            <li>html、dead、body 元素</li>
+            <li>meta 元素</li>
+          </ul>
+        </li>
+        <li>
+          学习文本元素
+          <ul>
+            <li>标题（h1-h6）</li>
+            <li>段落（p）</li>
+            <li>语义化文本元素</li>
+          </ul>
+        </li>
+        <li>学习链接与图像</li>
+        <li>深入理解语义化</li>
+      </ol>
+
+      <h3>推荐学习资源</h3>
+
+      <!-- 描述列表：资源名称和描述的关系 -->
+      <dl>
+        <dt>MDN Web Docs</dt>
+        <dd>最权威的前端技术文档，涵盖 HTML、CSS、JavaScript 的完整参考。</dd>
+
+        <dt>W3C 标准文档</dt>
+        <dd>HTML 和 CSS 的国际标准，适合深入了解规范细节。</dd>
+
+        <dt>WHATWG Living Standard</dt>
+        <dd>HTML 的活标准，持续更新，是浏览器厂商实现 HTML 的依据。</dd>
+      </dl>
+
+
+      <h3>第一个 HTML 文件示例</h3>
+      <p>在编辑器中新建一个 <code>index.html</code> 文件，输入以下代码：</p>
+
+      <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-CN"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;我的第一个网页&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;你好，世界！&lt;/h1&gt;
+  &lt;p&gt;这是我的第一个网页。&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+
+      <p>
+        保存后，按下 <kbd>Ctrl</kbd> + <kbd>S</kbd> 保存文件，
+        然后用浏览器打开，就能看到效果了。
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    <address>
+      作者：张三 |
+      邮箱：<a href="mailto:zhangsan@example.com">zhangsan@example.com</a>
+    </address>
+    <small>版权所有 &copy; 2026 张三的博客。保留所有权利。</small>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>contenteditable 属性示例</title>
+  <style>
+    .editable-box {
+      border: 2px dashed #999;
+      padding: 15px;
+      margin: 10px 0;
+      min-height: 60px;
+      border-radius: 5px;
+    }
+
+    /* 光标颜色变红，提示用户这里可以编辑 */
+    [contenteditable="true"] {
+      caret-color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>在线便签本</h2>
+
+  <!-- contenteditable="true"：可以编辑，保留富文本格式 -->
+  <div class="editable-box" contenteditable="true">
+    点击这里可以直接编辑这段文字，试试看！
+  </div>
+
+  <!-- contenteditable="plaintext-only"：只能输入纯文本，粘贴时去掉格式 -->
+  <div class="editable-box" contenteditable="plaintext-only">
+    这里只能输入纯文本，粘贴带格式的内容会自动去掉格式。
+  </div>
+
+  <!-- contenteditable="false"：明确不可编辑（默认行为） -->
+  <div class="editable-box" contenteditable="false">
+    这里不可编辑
+  </div>
+
+  <!-- 实际应用：可编辑的个人简介 -->
+  <h3>我的个人简介（点击可修改）</h3>
+  <p contenteditable="true" id="bio" style="border-bottom: 1px solid #ccc; padding: 5px;">
+    大家好，我叫小明，是一名程序员。
+  </p>
+  <button onclick="saveBio()">保存简介</button>
+
+  <script>
+    function saveBio() {
+      var content = document.getElementById("bio").innerText;
+      alert("已保存：" + content);
+    }
+  </script>
+
+</body>
+
+</html>

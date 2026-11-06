@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hidden属性示例</title>
+</head>
+
+<body>
+
+  <p>这段话是可见的</p>
+  <p hidden>这段话被隐藏了，你看不到我。</p>
+
+  <!-- 实际应用：登录前隐藏，登录后显示 -->
+  <div id="login-tip" hidden>
+    <p>欢迎回来！您已成功登录。</p>
+  </div>
+  <button onclick="showTip()">模拟登录</button>
+
+  <!-- hidden="until-found"：隐藏但可以被浏览器的"查找"功能找到 -->
+  <!-- 这是 HTML 的新特性，适合做折叠内容 -->
+  <p hidden="until-found" id="secret-content">
+    这段内容被隐藏，但用 Ctrl+F 搜索可以找到它。
+  </p>
+
+  <script>
+    function showTip() {
+      document.getElementById("login-tip").removeAttribute("hidden");
+    }
+  </script>
+
+</body>
+
+</html>

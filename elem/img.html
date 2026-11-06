@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>img元素示例</title>
+  </head>
+  <body>
+    <!-- 推荐写法：HTML 属性写原始尺寸，CSS 控制显示尺寸 -->
+    <img
+      src="images/banner.jpg"
+      alt="网站横幅"
+      width="1200"
+      height="400"
+      style="width: 100%; height: auto"
+    />
+
+    <!-- 现代网站推荐用 WebP（兼容性已经很好了） -->
+    <img src="images/hero-banner.webp" alt="首页横幅" />
+
+    <!-- 当图片加载失败时，自动换成备用图片 -->
+    <!-- onerror 是 JavaScript 事件，这里先了解写法 -->
+    <img
+      src="images/user-avatar.jpg"
+      alt="用户头像"
+      width="80"
+      height="80"
+      onerror="this.src = 'images/default-avatar.png'"
+    />
+
+    <!-- loading="lazy"：开启懒加载 -->
+    <!-- 适合页面下方、用户需要滚动才能看到的图片 -->
+    <img src="images/article-photo.jpg" alt="文章配图" width="800" height="450" loading="lazy" />
+
+    <!-- loading="eager"：立即加载（默认行为，不写 loading 就是这个） -->
+    <!-- 适合页面顶部、用户一打开就能看到的重要图片 -->
+    <img src="images/hero-image.jpg" alt="首页主图" width="1200" height="600" loading="eager" />
+
+    <!-- figure容器 -->
+    <!-- 最简单的用法：图片 + 说明文字 -->
+    <figure>
+      <img src="images/greatwall.jpg" alt="长城的全景照片，蜿蜒在山脊上" width="600" height="400" />
+      <figcaption>图1：北京八达岭长城，摄于2024年秋天</figcaption>
+    </figure>
+  </body>
+</html>
