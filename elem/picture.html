@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>响应式图片</title>
+  </head>
+  <body>
+    <!-- 综合实战：电商网站商品主图 -->
+    <!-- 要求：手机显示正方形特写图，电脑显示横版展示图 -->
+    <!--       支持 WebP 格式，不支持则降级到 JPEG -->
+    <!--       高清屏提供 2x 图 -->
+
+    <picture>
+      <!-- 电脑端（宽度 >= 768px）：横版 WebP 图 -->
+      <source
+        srcset="./product-wide.webp 1x, ./product-wide-2x.webp 2x"
+        media="(width >= 768px)"
+        type="image/webp"
+      />
+
+      <!-- 电脑端（宽度 >= 768px）：横版 JPEG 图（WebP 不支持时） -->
+      <source
+        srcset="./product-wide.jpg 1x, ./product-wide-2x.jpg 2x"
+        media="(width >= 768px)"
+        type="image/jpeg"
+      />
+
+      <!-- 手机端：正方形 WebP 图 -->
+      <source srcset="./product-square.webp 1x, ./product-square-2x.webp 2x" type="image/webp" />
+
+      <!-- 手机端后备：正方形 JPEG 图 -->
+      <!-- img 是最终后备，alt 和尺寸写在这里 -->
+      <img
+        src="./product-square.jpg"
+        alt="无线蓝牙耳机 - 星空黑配色"
+        width="400"
+        height="400"
+        style="width: 100%; height: auto"
+        loading="lazy"
+      />
+    </picture>
+  </body>
+</html>

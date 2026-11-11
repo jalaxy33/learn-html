@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>用户注册</title>
+  </head>
+  <body>
+    <h2>新用户注册</h2>
+
+    <!--
+      action：数据提交到 /user/register
+      method：用 POST，保护用户隐私
+      enctype：包含头像上传，必须用 multipart/form-data
+      autocomplete：关闭自动填充，注册表单不需要
+    -->
+    <form
+      id="registerForm"
+      action="/user/register"
+      method="post"
+      enctype="multipart/form-data"
+      autocomplete="off"
+    >
+      <!-- 用户名：必填，2-20字符，自动获得焦点 -->
+      <div>
+        <label for="regUsername">用户名：</label>
+        <input
+          type="text"
+          id="regUsername"
+          name="username"
+          placeholder="2-20个字符"
+          minlength="2"
+          maxlength="20"
+          required
+          autofocus
+        />
+      </div>
+
+      <!-- 密码：必填，6-16字符 -->
+      <div>
+        <label for="regPassword">密码：</label>
+        <input
+          type="password"
+          id="regPassword"
+          name="password"
+          placeholder="6-16位密码"
+          minlength="6"
+          maxlength="16"
+          required
+        />
+      </div>
+
+      <!-- 邮箱：必填，浏览器自动验证格式 -->
+      <div>
+        <label for="regEmail">邮箱：</label>
+        <input type="email" id="regEmail" name="email" placeholder="example@qq.com" required />
+      </div>
+
+      <!-- 手机号：选填，pattern 验证11位数字 -->
+      <div>
+        <label for="regPhone">手机号：</label>
+        <input
+          type="tel"
+          id="regPhone"
+          name="phone"
+          placeholder="请输入11位手机号"
+          pattern="[0-9]{11}"
+        />
+      </div>
+
+      <!-- 出生日期 -->
+      <div>
+        <label for="regBirthday">出生日期：</label>
+        <input type="date" id="regBirthday" name="birthday" max="2010-12-31" />
+      </div>
+
+      <!-- 性别：单选 -->
+      <div>
+        <span>性别：</span>
+        <input type="radio" id="genderM" name="gender" value="male" checked />
+        <label for="genderM">男</label>
+        <input type="radio" id="genderF" name="gender" value="female" />
+        <label for="genderF">女</label>
+      </div>
+
+      <!-- 兴趣爱好：复选 -->
+      <div>
+        <span>兴趣爱好：</span>
+        <input type="checkbox" id="hobbyRead" name="hobby" value="reading" />
+        <label for="hobbyRead">阅读</label>
+        <input type="checkbox" id="hobbyGame" name="hobby" value="gaming" />
+        <label for="hobbyGame">游戏</label>
+        <input type="checkbox" id="hobbyFit" name="hobby" value="fitness" />
+        <label for="hobbyFit">健身</label>
+      </div>
+
+      <!-- 上传头像 -->
+      <div>
+        <label for="regAvatar">头像：</label>
+        <input type="file" id="regAvatar" name="avatar" accept="image/jpeg,image/png" />
+      </div>
+
+      <!-- 隐藏字段：来源渠道，用户看不到 -->
+      <input type="hidden" name="source" value="website" />
+
+      <!-- 提交和重置 -->
+      <div>
+        <input type="submit" value="立即注册" />
+        <input type="reset" value="重新填写" />
+      </div>
+    </form>
+  </body>
+</html>
