@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- description 对 SEO 很重要 -->
+    <meta name="description" content="语义化HTML示例，前端开发工程师简历" />
+    <title>语义化HTML示例 - 前端开发工程师简历</title>
+  </head>
+  <body>
+    <!-- 页头：放姓名和联系方式 -->
+    <header>
+      <hgroup>
+        <h1>张三</h1>
+        <p>前端开发工程师</p>
+        <!-- 副标题 -->
+      </hgroup>
+
+      <!-- address 用于联系信息 -->
+      <address>
+        邮箱：<a href="mailto:zhangsan@example.com">zhangsan@example.com</a><br />
+        电话：<a href="tel:+8613800138000">138-0013-8000</a><br />
+        城市：北京市
+      </address>
+    </header>
+
+    <!-- 主导航：简历各部分的快速跳转 -->
+    <nav aria-label="简历导航">
+      <ul>
+        <li><a href="#about">关于我</a></li>
+        <li><a href="#skills">技能</a></li>
+        <li><a href="#experience">工作经历</a></li>
+        <li><a href="#education">教育背景</a></li>
+      </ul>
+    </nav>
+
+    <!-- 主体内容 -->
+    <main>
+      <!-- 关于我：一个主题分区 -->
+      <section id="about">
+        <h2>关于我</h2>
+        <p>
+          我是一名有 <strong>5年经验</strong> 的前端开发工程师， 专注于 <em>用户体验</em> 和
+          <em>性能优化</em>。 熟练掌握 <abbr title="超文本标记语言">HTML</abbr>、
+          <abbr title="层叠样式表">CSS</abbr> 和 <abbr title="JavaScript">JS</abbr>。
+        </p>
+      </section>
+
+      <!-- 技能：一个主题分区 -->
+      <section id="skills">
+        <h2>技能</h2>
+        <dl>
+          <dt>前端框架</dt>
+          <dd>Vue.js、React</dd>
+
+          <dt>构建工具</dt>
+          <dd>Webpack、Vite</dd>
+
+          <dt>版本控制</dt>
+          <dd>Git</dd>
+        </dl>
+      </section>
+
+      <!-- 工作经历：一个主题分区，每段经历是独立的 article -->
+      <section id="experience">
+        <h2>工作经历</h2>
+
+        <!-- 每段工作经历是独立的内容，用 article -->
+        <article>
+          <h3>高级前端工程师</h3>
+          <p>
+            某科技有限公司 |
+            <!-- time 标签标注日期，datetime 属性是机器可读格式 -->
+            <time datetime="2023-07">2023年7月</time>
+            至今
+          </p>
+          <ul>
+            <li>负责公司核心产品的前端架构设计</li>
+            <li>带领5人前端团队完成项目开发</li>
+            <li>将页面加载速度优化了40%</li>
+          </ul>
+        </article>
+
+        <article>
+          <h3>前端开发工程师</h3>
+          <p>
+            某互联网公司 |
+            <time datetime="2021-06">2021年6月</time>
+            至
+            <time datetime="2023-06">2023年6月</time>
+          </p>
+          <ul>
+            <li>参与多个 Web 应用的开发</li>
+            <li>实现了多个复杂的交互功能</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- 教育背景：一个主题分区 -->
+      <section id="education">
+        <h2>教育背景</h2>
+
+        <article>
+          <h3>计算机科学与技术 学士</h3>
+          <p>
+            北京某大学 |
+            <time datetime="2017-09">2017年9月</time>
+            至
+            <time datetime="2021-06">2021年6月</time>
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <!-- 侧边栏：推荐项目，与主内容相关但非核心 -->
+    <aside>
+      <h2>我的项目</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/zhangsan/project1"> 电商平台前端 </a>
+        </li>
+        <li>
+          <a href="https://github.com/zhangsan/project2"> 数据可视化大屏 </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- 页脚 -->
+    <footer>
+      <p>&copy; <time datetime="2026">2026</time> 张三。 本简历使用语义化 HTML 编写。</p>
+    </footer>
+  </body>
+</html>

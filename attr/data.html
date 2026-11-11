@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>data-*属性示例</title>
+    <style>
+      /* 商品卡片样式 */
+      .product-item {
+        border: 1px solid #ddd;
+        padding: 12px;
+        margin: 8px 0;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+      .product-item:hover {
+        background-color: #f5f5f5;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>商品列表</h2>
+
+    <!-- 每个商品存了 id、name、price 三个数据属性 -->
+    <div class="product-item" data-id="1001" data-name="iPhone 16 Pro" data-price="9999">
+      iPhone 16 Pro
+    </div>
+
+    <div class="product-item" data-id="1002" data-name="MacBook Pro M4" data-price="19999">
+      MacBook Pro M4
+    </div>
+
+    <div class="product-item" data-id="1003" data-name="小米 15 Ultra" data-price="5999">
+      小米 15 Ultra
+    </div>
+
+    <script>
+      // 获取所有商品卡片
+      var items = document.querySelectorAll(".product-item");
+
+      // 给每个卡片绑定点击事件
+      items.forEach(function (item) {
+        item.addEventListener("click", function () {
+          // 从被点击的元素上读取 data 属性
+          var id = this.dataset.id;
+          var name = this.dataset.name;
+          var price = this.dataset.price;
+
+          // 弹出商品信息
+          alert("商品编号：" + id + "\n商品名称：" + name + "\n商品价格：" + price + " 元");
+        });
+      });
+    </script>
+  </body>
+</html>
